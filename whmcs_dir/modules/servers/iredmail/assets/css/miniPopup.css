@@ -1,0 +1,142 @@
+
+/* popup style */
+.width-75 .form-control{width: 52% !important;}
+.table thead th{
+	background: #006687;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-weight: normal;
+	text-align: center;
+	padding: 5px 20px 5px 0;
+    /*text-align: right;
+    vertical-align: text-bottom;
+    padding: 5px 20px 5px 0;*/
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background: #006687;
+    color: #fff;
+    border: none;
+}
+.btn-default{
+	color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover{
+	background: #006687;
+    border: none;
+    color: #fff;
+     outline: none;
+}
+.glyphicon .glyphicon-ok{	
+     color: #33b933;
+}
+.glyphicon .glyphicon-off{
+	background: #bd2929;
+    border-radius: 50%; 
+    padding: 1px; 
+   
+	/*color: #bd2929;*/
+    color: #fff; 
+}
+.mini-popup-mask {
+    position: absolute;
+    z-index: 9998;
+    top: 0px;
+    left: 0px;
+    background-color: #000000;
+    display: none;
+    width: 100%;
+    height: 100%;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.mini-popup {
+    position: absolute;
+    z-index: 9999;
+    width: 660px;
+    height: auto;
+    background: #fff;
+    overflow: hidden;
+    padding: 0px 0 20px 0;
+    display: none;
+    font-size: 12px;
+    border-radius: 5px;
+    top:60% !important;
+    left:0% !important;
+}
+
+.mini-popup-buttons {
+    display: inline-block;
+}
+
+*+html .mini-popup-buttons { display: inline; }
+
+.mini-popup-header {
+    height: 13px;
+    clear: both;
+}
+
+.mini-popup-close {
+    float: right;
+    width: 13px;
+    height: 13px;
+    margin-right: 16px;
+    cursor: pointer;
+    background-position: 0 -80px;
+}
+
+.mini-popup-content {
+    margin: 0 35px 0 45px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #858585;
+    color: #3D4550;
+}
+
+.mini-popup-content p {
+    margin: 30px 0 0 0;
+    line-height: 18px;
+}
+
+.mini-popup-footer {
+    margin: 25px 45px 0 45px;
+    height: 35px;
+    float: right;
+}
+
+.confirm {
+    float: left;
+    height: 35px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+
+.cancel {
+    float: left;
+    height: 35px;
+    margin-left: 20px;
+}
+
+@media screen and (min-width: 320px) and (max-width:500px) { 
+.module-client-area {
+	padding: 15px 0px 0 0px;
+}
+.outer_tb {
+	float: left;
+	width: 100%;
+	overflow: scroll;
+}
+.iredmail .btn-lg {
+	padding: 7px 15px;
+	font-size: 13px;
+	line-height: 1.3333333;
+	border-radius: 6px;
+	margin-bottom: 13px;
+	margin-right: 10px;
+}
+.iredmail {
+	padding-left: 0;
+	padding-right: 0;
+}
+}

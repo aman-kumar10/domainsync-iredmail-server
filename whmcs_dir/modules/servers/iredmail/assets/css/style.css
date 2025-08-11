@@ -1,0 +1,529 @@
+        p.passworderr, p.cfameerr {
+            font-size: 12px;
+            color: #ff0000;
+            text-align: left;
+        }
+        .iredmail_align{
+            float: left;
+        }
+        .iredmail_show {
+            display: block;
+        }
+        .iredmail_hidden {
+            display: none;
+        }
+        .control-label{
+            text-align:left!important;
+            /*width:75px!important;*/
+        }
+        .form-group{
+            float:left;
+            width:100%;
+            margin: 10px 0px 5px 0px;
+        }
+        .form-group input{
+            float:left;
+            margin-right:10px;
+        }
+        .form-group .col-sm-10{
+            float:left;
+        }
+        .form-group .btn-primary{
+            margin-left:75px;
+        }
+        .addemail_content{
+            float:left;
+            width:100%;
+        }
+    .custom-twenty-one span.glyphicon.glyphicon-pencil:before {
+        content: "\270f";
+    }
+
+    .custom-twenty-one span.glyphicon.glyphicon-pencil {
+        position: relative;
+        transform: rotate(
+        127deg
+        );
+        top: 1px;
+        display: inline-block;
+        font-family: "Glyphicons Halflings";
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        font-size: 20px;
+        -webkit-font-smoothing: antialiased;
+    }
+.container-fluid.iredmail.custom-twenty-one form#change_mail_pw_form .form-group {
+    display: flex;
+    align-items: center;
+}
+.container-fluid.iredmail.custom-twenty-one form#change_mail_pw_form .form-group label{margin:0;}
+    .container-fluid.iredmail.custom-twenty-one form#change_mail_pw_form .form-group, .container-fluid.iredmail.custom-twenty-one form#change_mail_pw_form .form-group input, .container-fluid.iredmail.custom-twenty-one form#change_mail_pw_form .form-group .col-sm-offset-2.col-sm-10 {
+    float: unset;
+}
+.iredmail.custom-twenty-one h3{
+    font-size: 1.65rem;
+    margin-bottom: 20px;
+}
+  .title-ired {
+    display: flex;
+}
+div#btn-domain-div {
+    float: right;
+    margin-left: 50%;
+}
+div#btn-email-div {
+    float: right;
+    margin-left: 34%;
+}
+#adddomainmodal .form-group{
+text-align: left;
+}
+
+#adddomainmodal .modal-dialog {
+    max-width: 445px !important;
+}
+#upgradequotamodal .modal-dialog {
+    max-width: 540px !important;
+}
+#manageemailmodal .form-group ,#upgradequotamodal .form-group{
+text-align: left;
+}
+
+#manageemailmodal .modal-dialog {
+    max-width: 445px !important;
+}
+div#addemailmodal .form-group{
+text-align: left;
+}
+
+div#addemailmodal .modal-dialog {
+    max-width: 445px !important;
+}
+.custom-six div#addemailmodal .modal-dialog{
+    transform: translate(0px, 20%);
+}
+.manage-d{
+    padding: 2px 2px 2px 2px;
+}
+div#error-d {
+    text-align: left;
+    font-size: 14px;
+}
+
+table.table.domain-tbl th, td {
+    text-align: left;
+}
+table.table.domain-tbl th {
+    padding-left: 14px;
+}
+span#req {
+    color: #f30606;
+}
+span.mail-set {
+    margin-right: 12px;
+}
+
+#manageemailmodal .form-check {
+    text-align: left;
+}
+span.manage-d {
+    cursor: pointer;
+    color: #d9534f;
+    margin-right:15px;
+}
+table.table.email-tbl td {
+    word-wrap: break-word;
+}
+p#qota_size_msg {
+    color: #f80707;
+}
+p#valid-msg {
+    font-size: 12px;
+    color: #ff0000;
+    text-align: left;
+    margin-top: -12px;
+}
+p#d_name_error {
+    font-size: 12px;
+    color: #ff0000;
+    text-align: left;
+    margin-top: -12px;
+}
+
+.custom-six #btn-email-div {
+    float: right;
+    margin-left: auto;
+}
+.custom-six .title-ired {
+    align-items: center;
+    margin-bottom: 10px;
+}
+.custom-six .title-ired h3{
+    margin: 0
+}
+.custom-six #btn-domain-div {
+    float: right;
+    margin-left: auto;
+}
+
+.custom-six #manageemailmodal .modal-footer, .custom-six #addemailmodal .modal-footer , #upgradequotamodal, .custom-six .modal-footer{
+    border-top: unset;
+}
+.custom-six #manageemailmodal .modal-title, .custom-six #addemailmodal .modal-title , #upgradequotamodal, .custom-six .modal-title{
+    font-weight: 600;
+}
+
+.custom-six .input-group.mb-3 {
+    display: flex;
+    width: 100%;
+}
+.custom-six #inputEmail3 {
+    width: calc(100% - 0%);
+}
+/*.custom-six .input-group.mb-3 {
+    display: inline-block;
+}*/
+.custom-six .input-group-append {
+    display: inline-flex;
+    width: 100%;
+}
+
+.custom-six .input-group-append .select-dname {
+    border: 0;
+    margin: 0;
+    padding:8px;
+    border-radius: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: #1a3d5c;
+    color: #fff;
+    word-break: break-word;
+    white-space: normal;
+    font-size: 13px;
+    width: 100%;
+    text-align: left;
+}
+
+.custom-six #addemailmodal .modal-header {
+    padding: 15px 0px 15px 9px;
+}
+.custom-six .modal-body{
+    display: inline-block;
+    width: 100%;
+}
+.custom-six .modal-body form{
+    width: 100%;
+}
+/*.custom-six #adddomainmodal .modal-body{
+    justify-content: center;
+}*/
+.custom-six .modal-header {
+    padding: 15px 35px 15px 35px;
+}
+.custom-six .modal-header .close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+.custom-six .modal .modal-dialog {
+    margin: 10px auto;
+        transform: translate(0px, 50%);
+}
+.custom-six #emailforwordingmodal .modal-dialog {
+    max-width: 500px;
+}
+/*.custom-six #addemailmodal .modal-header .close ,.custom-six #adddomainmodal .modal-header .close, .custom-six #manageemailmodal .modal-header .close , .custom-six #upgradequotamodal .modal-header .close {
+    position: inherit;
+    margin: -24px 18px;
+}*/
+.btn:focus{
+    outline: 0 !important;
+}
+.custom-six  p#valid-msg {
+    font-size: 12px;
+    color: #ff0000;
+    text-align: left;
+    margin-top: 0;
+}
+
+.custom-spectra span#chnge-mail-select-quota {
+    font-size: 20px;
+    position: initial;
+}
+.custom-six span#chnge-mail-select-quota {
+    font-family: -webkit-pictograph;
+}
+.custom-spectra .modal-title{
+    display: inline-flex;
+}
+
+.custom-spectra .fa-level-up{
+    font-family: "Font Awesome 5 Pro";
+}
+span.email-forwording-note {
+    color: #dc3545;
+    font-size: 13px;
+
+}
+textarea#email-forwording {
+    text-align: left;
+    font-size: 13px;
+}
+div#emailforwording-loader {
+    font-size: 16px;
+    color: red;
+}
+.custom-six.iredmail .btn-default {
+    margin-bottom: 10px;
+}
+.custom-six textarea#email-forwording{
+    width: 100%;
+}
+.custom-six .domain-inner-sec {
+    overflow-x: auto;
+}
+.custom-six div#emailforwording-loader{
+    font-size: 0;
+    /*margin-bottom: 1px;*/
+}
+.custom-six #emailforwordingmodal .form-group label{
+    padding-bottom: 2px;
+}
+.custom-six div#emailforwording-loader i{
+    font-size: 16px;
+}
+.note-alias {
+    background-color: #eff7fe;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+    width: 50%;
+    vertical-align: bottom;
+    margin-left: 8px;
+}
+span.note-alias p {
+    padding: 2px;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+span.note-alias i {
+    font-size: 8px;
+    margin-right: 3px;
+}
+p#domain_name_alias {
+    font-size: 12px;
+    font-weight: 700;
+}
+form#emailalias-form label {
+    text-align: left;
+}
+
+span.manage-alias {
+    cursor: pointer;
+   /*margin-left: 15px;*/
+}
+form#emailalias-form .form-group {
+    text-align: left;
+}
+.modal-dialog.modal-lg.custom_modal {
+    top: 30%;
+}
+
+.radio-alias .form-check-input{
+    width:unset !important;
+    padding: 0;
+    margin: 0px;
+    position: inherit;
+    text-align: left;
+}
+
+.form-check.radio-alias {
+    text-align: left;
+    padding: 4px;
+}
+span.input-group-text.selected-dname {
+    border: 0;
+    margin: 0;
+    text-align: left;
+    padding: 13px 6px 7px;
+    border-radius: 0px;
+    height: 100%;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    word-break: break-word;
+    white-space: normal;
+    display: block;
+    line-height: 18px;
+    font-size: 13px;
+    width: 100%;
+}
+#emailalias-form .input-group-append {
+    height: 45px;
+    width: 38%;
+}
+input#email-name-alias {
+    width: calc(100% - 58%);
+}
+div#doaminalias-loader,div#emailaliasupdate-loader ,#targetdomain_error, #emailaliasadd-loader{
+    font-size: 14px;
+    color: red;
+    text-align: center;
+}
+
+ul.nav.nav_custom {
+    font-size: 14px;
+    float: right;
+    margin-bottom: 15px;
+  
+}
+
+ul.nav.nav_custom li.nav-item a {
+    background: #0a0d35;
+    color: #fff;
+    margin-right: 5px;
+}
+ul.nav.nav_custom li.nav-item a:hover {
+    background: #ff6600;
+    
+     
+}
+thead.thead-dark.tbl_alias th {
+    background-color: #ff6600;
+    color: #ffff!important;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+ul.nav.nav_custom li.nav-item a.active {
+     background-color: #ff6600;
+}
+div#emailalias-loader, div#setmailalias-loader, #catchallmodal-loader {
+    color: #fa0505;
+    font-size: 22px;
+    text-align:center;
+}
+.custom-six div#setmailalias-loader{
+    font-size: unset;
+}
+.custom-six div#setmailalias-loader i {
+    font-size: 22px;
+}
+p#valid-msg-alias {
+    color: #fa0505;
+}
+div#editmailaliasmodal {
+    text-align: left;
+}
+span.edit_mailaddress_head {
+    font-weight: 700;
+}
+.modal-dialog.modal-lg.custom_modal {
+    left: auto;
+    margin-left: auto;
+}
+form#domainalias-form {
+    text-align: left;
+}
+textarea#targetdomain-name {
+    font-size: 13px;
+}
+div#alias_list {
+margin: 4px 0px 0px 10px;
+    font-size: 12px;
+}
+div#setmailaliasmodal {
+    text-align: left;
+}
+form#catchallmodal-form {
+    text-align: left;
+}
+textarea#mailalias-name {
+    font-size: 13px;
+}
+div#setmailaliasmodal .modal-dialog {
+    margin: 0 auto;
+    left: 0;
+    max-width: 620px;
+    
+}
+.custom-six #setmailaliasmodal .modal-dialog{
+    transform: translateY(20%);
+}
+span.manage-catchall {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.mailalias-outer {
+    display: flex;
+    align-items: center;
+}
+
+.mailalias-outer textarea#mailalias-name {
+    width: 50%;
+    margin-right: 8px;
+}
+
+span#mailaddress_name, span#maildomain_name {
+     font-weight: 700;
+}
+.enable_alias input {
+    width: 5% !important;
+}
+span.action_btn {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+/*****for six template*****/
+
+/*.custom-six #setmailaliasmodal .modal-dialog{
+	transform: none;
+}*/
+.custom-six thead.thead-dark th {
+    text-align: left;
+}
+#emailforwordingmodal .form-group label{
+    width: 100%;
+}
+.custom-six table.table.email-tbl td{
+    white-space: nowrap;
+}
+/*
+.custom-six #manageemailmodal, .custom-six #catchallmodal, .custom-six #domainaliasmodal, .custom-six #adddomainmodal, .custom-six #upgradequotamodal, .custom-six #emailforwordingmodal, .custom-six #setmailaliasmodal  {
+    top: 200px;
+}*/
+@media(max-width:600px){
+    .custom-six #emailforwordingmodal .form-group label{
+    padding-bottom: 1px;
+}
+}
+@media(max-width: 575px){
+    .custom-six #btn-email-div, .custom-six #btn-domain-div {
+    float: none;
+    margin-bottom: 15px;
+}
+.custom-six div#addemailmodal .modal-dialog {
+    transform: translate(0px, 5%);
+}
+.custom-six .title-ired {
+    display: block;
+}
+}
+@media(max-width: 480px){
+    .custom-six .input-group.mb-3{
+        display: block;
+    }
+    .custom-six .input-group-append .input-group-text, .custom-six #inputEmail3 {
+    border-radius: 4px;
+}
+.custom-six .input-group-append {
+    margin-top: 3px;
+}
+}
