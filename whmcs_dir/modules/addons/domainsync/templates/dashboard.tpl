@@ -1,11 +1,16 @@
 {include file=$tplVar.header}
 
 
-<div class="top-alertMsgs"></div>
+<div class="top-alertMsgs">
+{if $tplVar['products']}
+    {$tplVar['alert_msg']}
+{/if}
+</div>
 
 <div class="domainSync-container">
-    <form action="" method="post" class="form-horizontal">
+    <form action="" method="post" class="form-horizontal domain-submit-form" id="domainSubmitFrm">
         <h2 class="domainSync-form">{$LANG['domainsync_form']}</h2>
+        <input type="hidden" name="domain_frm" value="domainSubFrm" id="domainSubFrm">
         <div class="form-group">
             <label for="inputClient" class="col-lg-6 col-sm-6 control-label">{$LANG['selectClientsTitle']}</label>
             <div class="col-lg-6 col-sm-6">
@@ -20,7 +25,7 @@
         <div class="form-group">
             <label for="selectedProduct" class="col-lg-6 col-sm-6 control-label">{$LANG['selectProductsTitle']}</label>
             <div class="col-lg-6 col-sm-6">
-                <select name="products" id="selectedProduct" class="form-control required-field">
+                <select name="selectedProduct" id="selectedProduct" class="form-control required-field">
                     <option value="" hidden>{$LANG['selectProductsOp']} </option>
                     {foreach from=$tplVar['products'] item=product}
                         <option value="{$product->id}">{$product->name}</option>

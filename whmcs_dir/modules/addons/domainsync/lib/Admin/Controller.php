@@ -10,9 +10,12 @@ require "../includes/customfieldfunctions.php";
 
 use Smarty;
 
+global $whmcs;
+
 class Controller
 {
     private $params;
+
 
     private $tplVar = [];
 
@@ -62,17 +65,21 @@ class Controller
             global $whmcs;
             $helper = new Helper;
 
+            // get custom fields
             if (isset($_POST['data_action']) && $_POST['data_action'] === "getCustomfields") {
                 $customFields = getCustomFields('product', $_POST['product_id'], "");
 
                 $html = '';
                     foreach ($customFields as $field) {
+
+                        $fieldName = "customfield[".$field['id']."]";
+
                         $html .= '
                         <div class="form-group">
                             <label class="col-lg-6 col-sm-6 control-label">' . htmlspecialchars($field['name']) . '</label>
                             <div class="col-lg-6 col-sm-6">
                                 <input type="text" 
-                                    name="customfield[' . intval($field['id']) . ']" 
+                                    name="'.$fieldName.'" 
                                     data-text_id=' . $field['textid']. ' 
                                     class="form-control required-field" 
                                     placeholder="' . htmlspecialchars($field['description']) . '" 
@@ -88,12 +95,36 @@ class Controller
                     exit;
             }
 
+            if ($whmcs->get_req_var('domain_frm') === 'domainSubFrm') {
+
+                $helper = new Helper;
+
+                $uid = $whmcs->get_req_var('userid');
+                $pid = $whmcs->get_req_var('selectedProduct');
+
+                $customFields = $whmcs->get_req_var('customfield');
+
+                $domain = '';
+                foreach ($customFields as $value) {
+                    if (preg_match('/^(?!\-)([A-Za-z0-9\-]{1,63}\.)+[A-Za-z]{2,}$/', trim($value))) {
+                        $domain = trim($value);
+                        break;
+                    }
+                }
+
+                $formResponse = $helper->domainFormSubmit($uid, $pid, $domain, $customFields);
+                
+                if ($formResponse['status'] === 'success') {
+                    $this->tplVar["alert_msg"] = '<div class="alert alert-success">' . $formResponse['message'] . '</div>';
+                } else {
+                    $this->tplVar["alert_msg"] = '<div class="alert alert-danger">' . $formResponse['message'] . '</div>';
+                }
+            }
+
+
             // Get products
             $products = Capsule::table("tblproducts")->where("servertype", "iredmail")->get();
             $this->tplVar["products"] = $products;
-
-            // $data = getCustomFields('product',26,"");
-            // echo "<pre>"; print_r($data); die;
 
             $this->tplFileName = $this->tplVar['tab'] = __FUNCTION__;
             $this->output();

@@ -9,6 +9,7 @@ header('Content-Type: application/json');
 
 global $whmcs;
 
+// Check domain
 if ($whmcs->get_req_var('data_action') === 'checkAvlDomain') {
     
    $helper = new Helper;
@@ -23,4 +24,3 @@ if ($whmcs->get_req_var('data_action') === 'checkAvlDomain') {
    exit;
 
 }
-

@@ -1,0 +1,159 @@
+$(document).ready(function() {
+    $("#selectedProduct").on("change", function() {
+        var selectedValue = $(this).val();
+        $("#cstmFldHead").show();
+
+        $.ajax({
+            method: "POST",
+            data: {
+                data_action: "getCustomfields",
+                product_id: selectedValue
+            },
+            dataType: "json",
+            beforeSend: function() {
+                $(".customfields-loader").html('<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>').show();
+                $("#customFieldsContainer").empty();
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#customFieldsContainer").html(response.html);
+                } else {
+                    $("#customFieldsContainer").html(
+                        '<p class="text-danger">No custom fields found.</p>'
+                    );
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("AJAX Error:", error);
+            },
+            complete: function() {
+                $(".customfields-loader").hide();
+            }
+        });
+    });
+
+
+    // Form validations
+    // $("#btnAddOrder").on("click", function (e) {
+    //     e.preventDefault(); 
+
+    //     var isValid = true;
+
+    //     $(".required-field").siblings(".error-message").remove();
+    //     $(".field-error").removeClass("field-error");
+
+    //     // Required field check
+    //     $(".domain-submit-form").find(".required-field").each(function () {
+    //         var value = $.trim($(this).val());
+    //         if (value === "" && $(this).is(":visible")) {
+    //             isValid = false;
+    //             $(this).addClass("field-error");
+    //             $(this).after('<div class="error-message">This field is required.</div>');
+    //         }
+    //     });
+
+    //     // Stop submit if any error messages exist
+    //     if ($(".domain-submit-form .error-message").length > 0) {
+    //         isValid = false;
+    //     }
+
+    //     // if (isValid) {
+    //     //     var userId = $("#selectUserid").val();
+    //     //     var productId = $("#selectedProduct").val();
+    //     //     var domain = $("select[name='domainName']").val();
+
+    //     //     $.ajax({
+    //     //         method: "POST",
+    //     //         url: "../modules/addons/domainsync/lib/Ajax.php", 
+    //     //         data: {
+    //     //             data_action: 'domainFrmSubmit',
+    //     //             uid: userId,
+    //     //             pid: productId,
+    //     //             domain_val: domain
+    //     //         },
+    //     //         dataType: "json",
+    //     //         success: function (response) {
+    //     //             if (response.success) {
+    //     //                 $(".domain-submit-form")[0].reset();
+    //     //                 $(".success-message, .error-message, .input-check-icon").remove();
+    //     //             } else {
+    //     //                 alert("Error: " + response.message);
+    //     //             }
+    //     //         },
+    //     //         error: function (xhr, status, error) {
+    //     //             console.error("Form submit AJAX error:", error);
+    //     //             alert("Something went wrong. Please try again.");
+    //     //         }
+    //     //     });
+    //     // }
+    // });
+
+    // Remove error on input change
+    $(".domain-submit-form").on("input change", ".required-field", function () {
+        if ($.trim($(this).val()) !== "") {
+            $(this).removeClass("field-error");
+            $(this).siblings(".error-message").remove();
+        }
+    });
+
+    // Check domain availability
+    (function () { 
+        var typingTimer; 
+        var doneTypingInterval = 500; 
+
+        $(document).on("input change", "input[name='domainName']", function () {
+            var $input = $(this);
+            var domain = $.trim($input.val()); 
+
+            if (!$input.parent().hasClass("input-with-icon")) {
+                $input.wrap('<div class="input-with-icon" style="position: relative; display: inline-block; width: 100%;"></div>');
+            }
+
+            $input.closest(".input-with-icon").siblings(".success-message, .error-message").remove();
+            $input.siblings(".input-check-icon").remove();
+            $input.css("padding-right", "10px");
+
+            clearTimeout(typingTimer);
+
+            if (domain.length > 0) {
+                typingTimer = setTimeout(function () {
+                    $input.closest(".input-with-icon").siblings(".success-message, .error-message").remove();
+                    $input.siblings(".input-check-icon").remove();
+                    $input.css("padding-right", "10px");
+
+                    $.ajax({
+                        method: "GET",
+                        url: "../modules/addons/domainsync/lib/Ajax.php",
+                        data: {
+                            data_action: "checkAvlDomain",
+                            domain_value: domain,
+                        },
+                        dataType: "json",
+                        success: function (response) {
+                            $input.closest(".input-with-icon").siblings(".success-message, .error-message").remove();
+                            $input.siblings(".input-check-icon").remove();
+                            $input.css("padding-right", "10px");
+
+                            if (response.success === 'success') {
+                                $input.closest(".input-with-icon").after('<div class="success-message">' + response.message + '</div>');
+
+                                $input.css("padding-right", "30px");
+                                $input.after('<i class="fa fa-check-circle input-check-icon" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); color: green; font-size: 18px; pointer-events: none;"></i>');
+                            } else {
+                                $input.closest(".input-with-icon").after('<div class="error-message">' + response.message + '</div>');
+                            }
+                        },
+                        error: function () {
+                            $input.closest(".input-with-icon").siblings(".success-message, .error-message").remove();
+                            $input.siblings(".input-check-icon").remove();
+                            $input.css("padding-right", "10px");
+                            $input.closest(".input-with-icon").after('<div class="error-message">An error occurred. Please try again.</div>');
+                        }
+                    });
+                }, doneTypingInterval);
+            }
+        });
+    })();
+
+
+});

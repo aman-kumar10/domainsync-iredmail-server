@@ -154,11 +154,11 @@
 }
 
 .field-error {
-    border: 1px solid #e74c3c !important;
+    border: 1px solid red !important;
     background-color: #fff0f0;
 }
 .error-message {
-    color: #e74c3c;
+    color: red;
     font-size: 12px;
     margin-top: 4px;
 }
