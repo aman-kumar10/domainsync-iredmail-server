@@ -69,7 +69,13 @@ class Controller
             if (isset($_POST['data_action']) && $_POST['data_action'] === "getCustomfields") {
                 $customFields = getCustomFields('product', $_POST['product_id'], "");
 
-                $html = '';
+                $html = '<div class="form-group">
+                        <label class="col-lg-6 col-sm-6 control-label" for="validateDomain">Validate Domain</label>
+                        <div class="col-lg-6 col-sm-6">
+                            <input type="checkbox" name="validateDomain" id="validateDomainID" class="form-control">
+                        </div>
+                    </div>';
+
                     foreach ($customFields as $field) {
 
                         $fieldName = "customfield[".$field['id']."]";

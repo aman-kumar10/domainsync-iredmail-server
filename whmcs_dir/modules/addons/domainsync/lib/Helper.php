@@ -11,7 +11,7 @@ class Helper
     // 
     function checkAvlDomain($domain) {
         try {
-            $exist = Capsule::table("tbldomains")->where("domain", $domain)->first();
+            $exist = Capsule::table("mod_ireddomainname")->where("domain", $domain)->first();
 
             if ($exist) {
                 return ['status' => 'error', 'message' => 'Domain is already registred.'];

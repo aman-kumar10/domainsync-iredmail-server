@@ -36,6 +36,11 @@ $(document).ready(function () {
 
     // Domain availability check on blur
     $(document).on("blur", "input[data-text_id='domain']", function () {
+
+        if (!$("#validateDomainID").is(":checked")) {
+            domainValid = true;
+            return; 
+        }
         var $input = $(this);
         var domainname = $.trim($input.val());
 
@@ -63,7 +68,7 @@ $(document).ready(function () {
             url: "../modules/addons/domainsync/lib/Ajax.php",
             data: {
                 data_action: "checkAvlDomain",
-                domain_value: domainname, // Pass full domain, not just TLD
+                domain_value: domainname,
             },
             dataType: "json",
             success: function (response) {

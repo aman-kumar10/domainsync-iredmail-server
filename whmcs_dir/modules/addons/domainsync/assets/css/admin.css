@@ -162,3 +162,7 @@
     font-size: 12px;
     margin-top: 4px;
 }
+
+.form-control#validateDomainID {
+    width: 20px;
+}
