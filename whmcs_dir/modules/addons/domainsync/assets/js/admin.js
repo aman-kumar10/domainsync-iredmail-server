@@ -38,16 +38,12 @@ $(document).ready(function () {
     $(document).on("blur", "input[data-text_id='domain']", function () {
         var $input = $(this);
         var domainname = $.trim($input.val());
-        var tld = domainname.substring(domainname.lastIndexOf('.') + 1); // Get part after last dot
 
         // Remove old messages/icons
         $input.closest(".input-with-icon").siblings(".success-message, .error-message").remove();
         $input.siblings(".input-check-icon").remove();
         domainValid = false;
 
-        if (!domainname.includes('.') || tld.length === 0) {
-            return; 
-        }
 
         // Check domain format (example.com only)
         var domainRegex = /^(?!-)[A-Za-z0-9-]{1,63}(?<!-)\.[A-Za-z0-9]{2,}$/;
@@ -67,7 +63,7 @@ $(document).ready(function () {
             url: "../modules/addons/domainsync/lib/Ajax.php",
             data: {
                 data_action: "checkAvlDomain",
-                domain_value: tld, // Pass full domain, not just TLD
+                domain_value: domainname, // Pass full domain, not just TLD
             },
             dataType: "json",
             success: function (response) {

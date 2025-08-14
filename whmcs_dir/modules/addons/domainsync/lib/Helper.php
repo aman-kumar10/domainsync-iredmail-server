@@ -11,13 +11,12 @@ class Helper
     // 
     function checkAvlDomain($domain) {
         try {
-            $tld = ".".$domain;
-            $exist = Capsule::table('tbldomainpricing')->where("extension", $tld)->first();
+            $exist = Capsule::table("tbldomains")->where("domain", $domain)->first();
 
             if ($exist) {
-                return ['status' => 'success', 'message' => 'Domain is Available.'];
+                return ['status' => 'error', 'message' => 'Domain is already registred.'];
             } else {
-                return ['status' => 'error', 'message' => 'Domain does not exists.'];
+                return ['status' => 'success', 'message' => 'Domain is Available.'];
             }
         } catch (Exception $e) {
             logActivity("Error checking domain availability: " . $e->getMessage());
